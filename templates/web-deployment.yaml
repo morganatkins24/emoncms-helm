@@ -26,6 +26,10 @@ spec:
           value: YOUR_MQTT_PASSWORD
         - name: MQTT_USER
           value: YOUR_MQTT_USER
+        - name: MQTT_CLIENTID
+          value: MQTT_CLIENTID
+        - name: MQTT_PORT
+          value: "1883"
         - name: MYSQL_DATABASE
           value: {{ .Values.db.mysqlDatabase }}
         - name: MYSQL_HOST
@@ -48,7 +52,11 @@ spec:
           value: "6379"
         - name: REDIS_PREFIX
           value: '''emoncms'''
-        image: openenergymonitor/emoncms:latest
+        - name: PHPFINA_DIR
+          value: '/var/lib/phpfina'
+        - name: PHPTIMESERIES_DIR
+          value: '/var/lib/phptimeseries'
+        image: {{ .Values.emoncms.image.image}}:{{ .Values.emoncms.image.tag }}
         name: web
         ports:
         - containerPort: 80

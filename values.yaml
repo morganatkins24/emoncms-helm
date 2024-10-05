@@ -2,6 +2,11 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+emoncms:
+  image:
+    image: openenergymonitor/emoncms
+    tag: latest
+
 db:
   mysqlDatabase: emoncms
   mysqlPassword: YOUR_SECURE_PASSWORD
