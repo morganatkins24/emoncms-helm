@@ -5,7 +5,7 @@
 emoncms:
   image:
     image: openenergymonitor/emoncms
-    tag: latest
+    tag: "11.3.24"
 
 db:
   mysqlDatabase: emoncms
